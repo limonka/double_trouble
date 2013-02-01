@@ -3,10 +3,10 @@ module DoubleTrouble
     extend ActiveSupport::Concern
 
     included do
-      class_inheritable_accessor :allow_double_trouble_protection
-      cattr_accessor             :double_trouble_nonce_store
-      cattr_accessor             :double_trouble_nonce_param
-      helper_method              :protect_against_double_trouble?, :double_trouble_nonce_param, :double_trouble_form_nonce
+      class_attribute :allow_double_trouble_protection
+      cattr_accessor  :double_trouble_nonce_store
+      cattr_accessor  :double_trouble_nonce_param
+      helper_method   :protect_against_double_trouble?, :double_trouble_nonce_param, :double_trouble_form_nonce
 
       self.allow_double_trouble_protection = true
     end
