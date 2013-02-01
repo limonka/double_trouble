@@ -34,15 +34,14 @@ module DoubleTrouble
       end
     end
 
-    module InstanceMethods
-      protected
-      def double_trouble_form_nonce
-        ActiveSupport::SecureRandom.base64(32)
-      end
+    protected
 
-      def protect_against_double_trouble?
-        allow_double_trouble_protection && double_trouble_nonce_store && double_trouble_nonce_param
-      end
+    def double_trouble_form_nonce
+      ActiveSupport::SecureRandom.base64(32)
+    end
+
+    def protect_against_double_trouble?
+      allow_double_trouble_protection && double_trouble_nonce_store && double_trouble_nonce_param
     end
   end
 end
